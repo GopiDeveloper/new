@@ -1,10 +1,11 @@
 var express = require('express');
-
+var cors = require('cors');
 var dotenv = require('dotenv');
 var mongo = require('mongodb');
 var MongoClient = mongo.MongoClient;
-var cors = require('cors');
+
 var app = express();
+app.use(cors());
 
 
 dotenv.config();
