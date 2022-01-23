@@ -41,12 +41,12 @@ app.get('/mealType',(req, res) => {
     })
 })
 
-app.get('/reastaurants',(req, res) => {
+/*app.get('/reastaurants',(req, res) => {
     db.collection('reastaurant').find().toArray((err,result)=> {
         if(err) throw err;
         res.send(result)
     })
-})
+})*/
 
 app.get('/menu',(req, res) => {
     db.collection('menu').find().toArray((err,result)=> {
@@ -68,7 +68,9 @@ app.get('/reastaurants/:id',(req, res) => {
 
 app.get('/reastaurants',(req,res) =>{
     var query = {};
-    console.log(req.query.city)
+     if(req.query.city){
+        query={state_id:Number(req.query.city)}
+    }
     db.collection('reastaurant').find().toArray((err,result) =>{
         if(err) throw err;
         res.send(result)
@@ -86,6 +88,10 @@ app.get('/filter/:mealId',(req,res) =>{
             sortKey=1
         }
         sort = {cost: Number(sortKey)}
+    }
+    if(req.query.skip && req.query.limit){
+        skip = Number(req.query.skip)
+        limit = Number(req.query.limit)
     }
 
     if(req.query.lcost && req.query.hcost){
