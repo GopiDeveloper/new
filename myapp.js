@@ -81,6 +81,7 @@ app.get('/reastaurants',(req,res) =>{
 app.get('/filter/:mealId',(req,res) =>{
     var id = parseInt(req.params.mealId);
     var sort = {cost:1}
+    var limit = 1000000000000
     var query = {"mealTypes.mealtype_id":id};
     if(req.query.sortKey){
         var sortKey = req.query.sortKey
