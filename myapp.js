@@ -41,13 +41,20 @@ app.get('/mealType',(req, res) => {
     })
 })
 
-/*app.get('/reastaurants',(req, res) => {
-    db.collection('reastaurant').find().toArray((err,result)=> {
+app.get('/item',(req, res) => {
+    db.collection('items').find().toArray((err,result)=> {
         if(err) throw err;
         res.send(result)
     })
 })
 
+app.get('/product',(req, res) => {
+    db.collection('products').find().toArray((err,result)=> {
+        if(err) throw err;
+        res.send(result)
+    })
+})
+/*
 app.get('/menu',(req, res) => {
     db.collection('menu').find().toArray((err,result)=> {
         if(err) throw err;
@@ -58,6 +65,14 @@ app.get('/menu',(req, res) => {
 app.get('/reastaurants/:id',(req, res) => {
     var id =  parseInt(req.params.id);
     db.collection('reastaurant').find({"restaurant_id":id}).toArray((err,result) =>{
+        if(err) throw err;
+        res.send(result) 
+    })
+})
+
+app.get('/product/:id',(req, res) => {
+    var id =  parseInt(req.params.id);
+    db.collection('products').find({"cate_id":id}).toArray((err,result) =>{
         if(err) throw err;
         res.send(result) 
     })
