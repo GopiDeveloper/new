@@ -54,13 +54,13 @@ app.get('/product',(req, res) => {
         res.send(result)
     })
 })
-/*
+
 app.get('/menu',(req, res) => {
     db.collection('menu').find().toArray((err,result)=> {
         if(err) throw err;
         res.send(result)  
     })
-})*/
+})
 
 app.get('/reastaurants/:id',(req, res) => {
     var id =  parseInt(req.params.id);
