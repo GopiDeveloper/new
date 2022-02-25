@@ -78,7 +78,7 @@ app.get('/product/:id',(req, res) => {
     })
 })
 
-app.get('/filter/:categoryId',(req,res) => {
+app.get('/product/:categoryId',(req,res) => {
     var id = parseInt(req.params.categoryId);
     db.collection('products').find({"categoryType.categorytype_id":id}).toArray((err,result) =>{
        if(err) throw err;
