@@ -1,11 +1,11 @@
 {
-  "name": "api",
+  "name": "myapp",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node api.js",
-    "dev": "nodemon appi.js"
+    "start": "node myapp.js",
+    "dev": "nodemon myapp.js"
   },
   "keywords": [
     "node",
