@@ -223,7 +223,7 @@ app.get('/product/:id',(req,res) => {
 })
 
 
-app.get('/filter/:itemid',(req, res) =>{
+app.get('/filt/:itemid',(req, res) =>{
     var id = parseInt(req.params.itemid);
     db.collection('productname').find({"categoryType.categorytype_id":id}).toArray((err,result) =>{
         if(err) throw err;
