@@ -237,7 +237,7 @@ app.get('/men',(req, res) => {
     })
 })
 
-app.get('/menu/:proid',(req,res) => {
+app.get('/men/:proid',(req,res) => {
     var proid = Number(req.params.proid);
     db.collection('productmenu').find({"product_id":proid}).toArray((err,result) =>{
         if(err) throw err;
