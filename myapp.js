@@ -230,7 +230,7 @@ app.get('/filt/:itemid',(req, res) =>{
         res.send(result)
     })
 })
-app.get('/menu',(req, res) => {
+app.get('/men',(req, res) => {
     db.collection('productmenu').find().toArray((err,result) =>{
         if(err) throw err;
         res.send(result)
@@ -245,7 +245,7 @@ app.get('/menu/:proid',(req,res) => {
     })
 })
 
-app.post('/menuItem',(req,res) => {
+app.post('/menutem',(req,res) => {
     console.log(req.body);
     db.collection('productmenu').find({menu_id:{$in:req.body}}).toArray((err,result) =>{
         if(err) throw err; 
