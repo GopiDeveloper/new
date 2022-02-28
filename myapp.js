@@ -214,7 +214,7 @@ app.get('/products',(req, res) => {
     })
 })
 
-app.get('/product/:id',(req,res) => {
+app.get('/products/:id',(req,res) => {
     var id = parseInt(req.params.id);
     db.collection('productname').find({"product_id":id}).toArray((err,result) =>{
         if(err) throw err;
