@@ -9,7 +9,7 @@ app.use(cors());
 
 
 dotenv.config();
-var mongoUrl = 'mongodb+srv://143gopi_247:P.Gopi143@cluster0.vss3u.mongodb.net/augintern?retryWrites=true&w=majority';
+var mongoUrl = 'mongodb+srv://Gopi:rishi@cluster0.gfvcx.mongodb.net/augintern?retryWrites=true&w=majority';
 
 
 const bodyParser = require('body-parser')
@@ -255,16 +255,16 @@ app.post('/menutem',(req,res) => {
 })
 
 
-app.post('/placeorde',(req,res) => {
+app.post('/placeorder',(req,res) => {
     console.log(req.body);
-    db.collection('productorders').insert(req.body,(err,result) => {
+    db.collection('orders').insert(req.body,(err,result) => {
         if(err) throw err;
         res.send("order placed")
     })
 })
 
-app.get('/orde',(req, res) => {
-    db.collection('productorders').find().toArray((err,result) =>{
+app.get('/order',(req, res) => {
+    db.collection('orders').find().toArray((err,result) =>{
         if(err) throw err;
         res.send(result)
     })
