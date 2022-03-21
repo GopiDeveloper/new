@@ -9,7 +9,7 @@ app.use(cors());
 
 
 dotenv.config();
-var mongoUrl = 'mongodb+srv://Gopi:rishi@cluster0.gfvcx.mongodb.net/TechPose?retryWrites=true&w=majority';
+var mongoUrl = 'mongodb+srv://143gopi_247:P.Gopi143@cluster0.vss3u.mongodb.net/augintern?retryWrites=true&w=majority';
 
 
 const bodyParser = require('body-parser')
@@ -26,12 +26,12 @@ app.get('/',(req, res) => {
 })
 
 app.get('/location',(req, res) => {
-    db.collection('insta').find().toArray((err,result)=> {
+    db.collection('location').find().toArray((err,result)=> {
         if(err) throw err;
         res.send(result)
     })
 })
-/*
+
 app.get('/mealType',(req, res) => {
     db.collection('mealtype').find().toArray((err,result)=> {
         if(err) throw err;
@@ -271,12 +271,12 @@ app.get('/orde',(req, res) => {
 })
 
 
-*/
+
 
 //connecting with mongodb
 MongoClient.connect(mongoUrl, (err,client)=>{
     if(err) console.log("Error while connecting")
-    db = client.db('TechPose');
+    db = client.db('augintern');
     app.listen(port,() =>{ 
         console.log(`listening on port ${port}`)
     })
