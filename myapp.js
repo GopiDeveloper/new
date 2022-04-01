@@ -9,7 +9,7 @@ app.use(cors());
 
 
 dotenv.config();
-var mongoUrl = 'mongodb+srv://Gopi:rishi@cluster0.gfvcx.mongodb.net/shopping?retryWrites=true&w=majority';
+var mongoUrl = 'mongodb+srv://Gopi:rishi@cluster0.gfvcx.mongodb.net/Shopping?retryWrites=true&w=majority';
 
 
 const bodyParser = require('body-parser')
