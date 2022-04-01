@@ -9,7 +9,7 @@ app.use(cors());
 
 
 dotenv.config();
-var mongoUrl = 'mongodb+srv://Gopi:rishi@cluster0.gfvcx.mongodb.net/augintern?retryWrites=true&w=majority';
+var mongoUrl = 'mongodb+srv://Gopi:rishi@cluster0.gfvcx.mongodb.net/shopping?retryWrites=true&w=majority';
 
 
 const bodyParser = require('body-parser')
@@ -24,7 +24,27 @@ app.use(bodyParser.json());
 app.get('/',(req, res) => {
     res.send("hii from the from express")
 })
+app.get('/items',(req, res) => {
+    db.collection('homeitems').find().toArray((err,result)=> {
+        if(err) throw err;
+        res.send(result)
+    })
+})
+app.get('/product',(req, res) => {
+    db.collection('alitems').find().toArray((err,result)=> {
+        if(err) throw err;
+        res.send(result)
+    })
+})
 
+app.get('/products/:proitemid',(req, res) => {
+    var proitemid = Number(req.params.restid)
+    db.collection('alitems').find({product_id:proitemid}).toArray((err,result)=> {
+        if(err) throw err;
+        res.send(result)
+    })
+})
+/*
 app.get('/location',(req, res) => {
     db.collection('location').find().toArray((err,result)=> {
         if(err) throw err;
@@ -271,12 +291,12 @@ app.get('/order',(req, res) => {
 })
 
 
-
+*/
 
 //connecting with mongodb
 MongoClient.connect(mongoUrl, (err,client)=>{
     if(err) console.log("Error while connecting")
-    db = client.db('augintern');
+    db = client.db('shopping');
     app.listen(port,() =>{ 
         console.log(`listening on port ${port}`)
     })
