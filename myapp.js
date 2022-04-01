@@ -30,16 +30,16 @@ app.get('/items',(req, res) => {
         res.send(result)
     })
 })
-app.get('/product',(req, res) => {
+app.get('/products',(req, res) => {
     db.collection('alitems').find().toArray((err,result)=> {
         if(err) throw err;
         res.send(result)
     })
 })
 
-app.get('/products/:proitemid',(req, res) => {
-    var proitemid = Number(req.params.restid)
-    db.collection('alitems').find({product_id:proitemid}).toArray((err,result)=> {
+app.get('/products/:id',(req, res) => {
+   var id =  parseInt(req.params.id);
+    db.collection('alitems').find({product_id:id}).toArray((err,result)=> {
         if(err) throw err;
         res.send(result)
     })
