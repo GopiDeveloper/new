@@ -296,7 +296,7 @@ app.get('/order',(req, res) => {
 //connecting with mongodb
 MongoClient.connect(mongoUrl, (err,client)=>{
     if(err) console.log("Error while connecting")
-    db = client.db('shopping');
+    db = client.db('Shopping');
     app.listen(port,() =>{ 
         console.log(`listening on port ${port}`)
     })
