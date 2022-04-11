@@ -9,7 +9,7 @@ app.use(cors());
 
 
 dotenv.config();
-var mongoUrl = 'mongodb+srv://Gopi:rishi@cluster0.gfvcx.mongodb.net/Shopping?retryWrites=true&w=majority';
+var mongoUrl = 'mongodb+srv://Gopi:rishi@cluster0.gfvcx.mongodb.net/augintern?retryWrites=true&w=majority';
 
 
 const bodyParser = require('body-parser')
@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 
 app.get('/',(req, res) => {
     res.send("hii from the from express")
-})
+})  /*
 app.get('/items',(req, res) => {
     db.collection('homeitems').find().toArray((err,result)=> {
         if(err) throw err;
@@ -43,8 +43,8 @@ app.get('/products/:id',(req, res) => {
         if(err) throw err;
         res.send(result)
     })
-})
-/*
+})  */
+
 app.get('/location',(req, res) => {
     db.collection('location').find().toArray((err,result)=> {
         if(err) throw err;
@@ -58,7 +58,7 @@ app.get('/mealType',(req, res) => {
         res.send(result)
     })
 })
-
+/*
 app.get('/item',(req, res) => {
     db.collection('items').find().toArray((err,result)=> {
         if(err) throw err;
@@ -71,7 +71,7 @@ app.get('/product',(req, res) => {
         if(err) throw err;
         res.send(result)
     })
-})
+}) */
 
 app.get('/menu',(req, res) => {
     db.collection('menu').find().toArray((err,result)=> {
@@ -87,7 +87,7 @@ app.get('/reastaurants/:id',(req, res) => {
         res.send(result) 
     })
 })
-
+/*
 app.get('/product/:id',(req, res) => {
     var id =  parseInt(req.params.id);
     db.collection('products').find({"cate_id":id}).toArray((err,result) =>{
@@ -104,7 +104,7 @@ app.get('/category/:categoryId',(req,res) => {
     })
 
 })
-
+*/
 //query params example
 //wrt to city_name
 
@@ -218,7 +218,7 @@ app.delete('/deleteOrders',(req,res) =>{
 
 
 
-
+/*
 
 app.get('/category',(req, res) => {
     db.collection('productitem').find().toArray((err,result) =>{
@@ -272,7 +272,7 @@ app.post('/menutem',(req,res) => {
         res.send(result)
     })
     
-})
+})    */
 
 
 app.post('/placeorder',(req,res) => {
@@ -291,12 +291,12 @@ app.get('/order',(req, res) => {
 })
 
 
-*/
+
 
 //connecting with mongodb
 MongoClient.connect(mongoUrl, (err,client)=>{
     if(err) console.log("Error while connecting")
-    db = client.db('Shopping');
+    db = client.db('augintern');
     app.listen(port,() =>{ 
         console.log(`listening on port ${port}`)
     })
