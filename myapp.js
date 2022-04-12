@@ -9,7 +9,7 @@ app.use(cors());
 
 
 dotenv.config();
-var mongoUrl = 'mongodb+srv://Gopi:rishi@cluster0.gfvcx.mongodb.net/augintern?retryWrites=true&w=majority';
+var mongoUrl = 'mongodb+srv://Gopi:rishi@cluster0.gfvcx.mongodb.net/Shopping?retryWrites=true&w=majority';
 
 
 const bodyParser = require('body-parser')
@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 
 app.get('/',(req, res) => {
     res.send("hii from the from express")
-})  /*
+})  
 app.get('/items',(req, res) => {
     db.collection('homeitems').find().toArray((err,result)=> {
         if(err) throw err;
@@ -43,7 +43,7 @@ app.get('/products/:id',(req, res) => {
         if(err) throw err;
         res.send(result)
     })
-})  */
+})  /*
 
 app.get('/location',(req, res) => {
     db.collection('location').find().toArray((err,result)=> {
@@ -71,7 +71,7 @@ app.get('/product',(req, res) => {
         if(err) throw err;
         res.send(result)
     })
-}) */
+}) 
 
 app.get('/menu',(req, res) => {
     db.collection('menu').find().toArray((err,result)=> {
@@ -86,7 +86,7 @@ app.get('/reastaurants/:id',(req, res) => {
         if(err) throw err;
         res.send(result) 
     })
-})
+})   */
 /*
 app.get('/product/:id',(req, res) => {
     var id =  parseInt(req.params.id);
@@ -104,7 +104,7 @@ app.get('/category/:categoryId',(req,res) => {
     })
 
 })
-*/
+*/  /*
 //query params example
 //wrt to city_name
 
@@ -274,7 +274,7 @@ app.post('/menutem',(req,res) => {
     
 })    */
 
-
+/*
 app.post('/placeorder',(req,res) => {
     console.log(req.body);
     db.collection('orders').insert(req.body,(err,result) => {
@@ -290,13 +290,13 @@ app.get('/order',(req, res) => {
     })
 })
 
-
+*/
 
 
 //connecting with mongodb
 MongoClient.connect(mongoUrl, (err,client)=>{
     if(err) console.log("Error while connecting")
-    db = client.db('augintern');
+    db = client.db('Shopping');
     app.listen(port,() =>{ 
         console.log(`listening on port ${port}`)
     })
