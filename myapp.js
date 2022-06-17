@@ -23,7 +23,8 @@ app.use(bodyParser.json());
 
 app.get('/',(req, res) => {
     res.send("hii from the from express")
-})  
+}) 
+/*
 app.get('/items',(req, res) => {
     db.collection('homeitems').find().toArray((err,result)=> {
         if(err) throw err;
@@ -43,7 +44,7 @@ app.get('/products/:id',(req, res) => {
         if(err) throw err;
         res.send(result)
     })
-})  /*
+})  */
 
 app.get('/location',(req, res) => {
     db.collection('location').find().toArray((err,result)=> {
@@ -72,7 +73,7 @@ app.get('/product',(req, res) => {
         res.send(result)
     })
 }) 
-
+*/
 app.get('/menu',(req, res) => {
     db.collection('menu').find().toArray((err,result)=> {
         if(err) throw err;
@@ -86,7 +87,7 @@ app.get('/reastaurants/:id',(req, res) => {
         if(err) throw err;
         res.send(result) 
     })
-})   */
+})   
 /*
 app.get('/product/:id',(req, res) => {
     var id =  parseInt(req.params.id);
@@ -104,7 +105,7 @@ app.get('/category/:categoryId',(req,res) => {
     })
 
 })
-*/  /*
+*/  
 //query params example
 //wrt to city_name
 
@@ -274,7 +275,7 @@ app.post('/menutem',(req,res) => {
     
 })    */
 
-/*
+
 app.post('/placeorder',(req,res) => {
     console.log(req.body);
     db.collection('orders').insert(req.body,(err,result) => {
@@ -290,7 +291,7 @@ app.get('/order',(req, res) => {
     })
 })
 
-*/
+
 
 
 //connecting with mongodb
