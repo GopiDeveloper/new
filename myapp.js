@@ -31,6 +31,12 @@ app.get('/items',(req, res) => {
         res.send(result)
     })
 })
+app.get('/details',(req, res) => {
+    db.collection('details').find().toArray((err,result)=>{
+       if(err) throw err;
+    res.send(result)
+    })
+})
 /*
 app.get('/products',(req, res) => {
     db.collection('alitems').find().toArray((err,result)=> {
