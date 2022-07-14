@@ -51,7 +51,7 @@ app.get('/products/:id',(req, res) => {
         if(err) throw err;
         res.send(result)
     })
-})  */
+})  
 
 app.get('/location',(req, res) => {
     db.collection('location').find().toArray((err,result)=> {
@@ -66,7 +66,7 @@ app.get('/mealType',(req, res) => {
         res.send(result)
     })
 })
-/*
+
 app.get('/item',(req, res) => {
     db.collection('items').find().toArray((err,result)=> {
         if(err) throw err;
@@ -79,7 +79,7 @@ app.get('/product',(req, res) => {
         if(err) throw err;
         res.send(result)
     })
-}) */
+})
 
 app.get('/menu',(req, res) => {
     db.collection('menu').find().toArray((err,result)=> {
@@ -95,7 +95,7 @@ app.get('/reastaurants/:id',(req, res) => {
         res.send(result) 
     })
 })   
-/*
+
 app.get('/product/:id',(req, res) => {
     var id =  parseInt(req.params.id);
     db.collection('products').find({"cate_id":id}).toArray((err,result) =>{
@@ -111,7 +111,7 @@ app.get('/category/:categoryId',(req,res) => {
         res.send(result)
     })
 
-}) */
+}) 
  
 //query params example
 //wrt to city_name
@@ -281,7 +281,7 @@ app.post('/menutem',(req,res) => {
     })
     
 })    
-*/
+
 
 app.post('/placeorder',(req,res) => {
     console.log(req.body);
